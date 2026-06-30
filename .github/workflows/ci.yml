@@ -9,6 +9,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install deps
-        run: pip install pandas numpy scikit-learn xgboost
+        run: pip install pandas numpy scikit-learn xgboost pytest
       - name: Run tests
         run: python -m pytest src/test_dashboard.py -v
