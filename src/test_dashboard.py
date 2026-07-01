@@ -31,8 +31,8 @@ def test_no_null_values():
 def test_model_trains_and_predicts():
     df = pd.read_csv(DATA)
     feats = ["credit_score","annual_income","dti_ratio","loan_amount","loan_term",
-             "employment_length","num_credit_lines","delinquent_history",
-             "num_delinquencies","num_credit_inquiries","revolving_util","interest_rate"]
+               "employment_length","num_credit_lines","delinquent_history",
+              "num_delinquencies","num_credit_inquiries","revolving_util","interest_rate"]
     X, y = df[feats], (df["loan_status"].str.startswith("Default")).astype(int)
     X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42)
     m = XGBClassifier(n_estimators=50, max_depth=3, random_state=42, verbosity=0)
